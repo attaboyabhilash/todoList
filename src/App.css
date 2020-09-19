@@ -1,0 +1,154 @@
+@import url("https://use.typekit.net/sxi1ddm.css");
+/*
+    font-family: reross-quadratic, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+*/
+
+body {
+  margin: 0;
+  background: #121212;
+  color: #FFF;
+  font-family: reross-quadratic, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.todoList{
+  margin: 0px auto;
+  width: 500px;
+  background: #292929;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #121212;
+  box-sizing: border-box;
+}
+.todoList:nth-child(1){
+  margin-top: 50px;
+}
+.checkPara input{
+  margin: auto 15px auto 0px;
+  display: inline;
+}
+.checkPara p{
+  display: inline;
+  max-width: 70%;
+  word-break: break-all;
+  position: relative;
+}
+.todoList button{
+  margin: auto 0px;
+  border: 0;
+  padding: 0 5px;
+  height: 20px;
+  background: crimson;
+  color: #FFF;
+  padding-top: 3px;
+  font-weight: 500;
+  outline: none;
+  font-weight: bolder;
+}
+.todoList button:active{
+  transform: scale(0.9,0.9);
+  font-size: 0.8em;
+}
+
+.checkPara p::after{
+  content: "";
+  position: absolute;
+  width: 110%;
+  height: 2px;
+  left: -5px;
+  bottom: 8px;
+  background-color: #AAA;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 250ms linear;
+}
+
+input:checked ~ p::after{
+  transform: scaleX(1);
+}
+
+.header{
+  width: fit-content;
+  margin: 20px auto;
+}
+
+.header img{
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  transform-origin: center;
+  animation: rotation 3s infinite linear;
+}
+.header h1{
+  margin: 0px;
+  margin-left: 10px;
+  display: inline-block;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+.adder{
+  margin: 10px auto;
+  width: 500px;
+  box-sizing: border-box;
+  position: relative;
+}
+.adder input[type="text"]{
+  width: 100%;
+  outline: none;
+  font-family: reross-quadratic, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  padding: 7px 10px;
+  font-size: 1.1em;
+  margin-right: 5px;
+  border: 0;
+  box-sizing: border-box;
+  background-color: azure;
+}
+.adder input[type="submit"]{
+  width: fit-content;
+  outline: none;
+  font-family: reross-quadratic, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  padding: 4px 8px;
+  font-size: 1.1em;
+  background: #61dbfb;
+  color:#212121;
+  border: none;
+  box-sizing: border-box;
+  position: absolute;
+  right: 3px;
+  top: 3px;
+}
+.adder input[type="submit"]:hover{
+  background: cyan;
+}
+.adder input[type="submit"]:active{
+  transform: scale(0.95,0.95);
+  font-size: 1.1em;
+}
+
+
+
+@media only screen and (max-width: 515px) {
+  .todoList{
+    width: 90%;
+  }
+  .adder{
+    margin: 10px auto;
+    width: 90%;
+  }
+}
+
